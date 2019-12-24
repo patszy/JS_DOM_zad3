@@ -29,7 +29,9 @@ function rateEmployee(){
 
     for(let i=1; true; i++){
         getEmployee = document.querySelector('#pracownik'+i);
+
         if(getEmployee == null) break;
+
         getTime = parseInt(getEmployee.getElementsByTagName('input')[0].value);
         let addEmployee = new Employee(i, getTime);
         tabEmployee[i-1]=addEmployee;
@@ -37,18 +39,21 @@ function rateEmployee(){
 
     /* Best 3 employees */
     getBestEmployee = document.getElementById('najlepsi-pracownicy');
+    if(getBestEmployee.innerHTML!="") getBestEmployee.innerHTML="";
+
     tabEmployee.sort((empl1, empl2) => (empl1.workTime > empl2.workTime) ? -1 : 1);
+
     for(i=0; i<3; i++){
-        getEmployee = document.querySelector('#pracownik'+tabEmployee[i].index);
-        getBestEmployee.appendChild(getEmployee);
+        getEmployee = document.querySelector('#pracownik'+tabEmployee[i].index+' span').innerHTML;
+        let divEmployee = document.createElement('li');
+        divEmployee.innerText = getEmployee+" "+tabEmployee[i].workTime;
+        getBestEmployee.appendChild(divEmployee);
     }
-    /* How to repair best 3 employees mistake: create object.name, get name from employee, add to object, view it in html. */
 
     /* Worst employee/s */
     getEmployee = document.querySelector('#pracownik'+tabEmployee[tabEmployee.length-1].index);
     getEmployee.style.backgroundColor = 'maroon';
 }
-
 
 document.getElementsByTagName('button')[0].addEventListener('click', function(){
     calcSalary();
