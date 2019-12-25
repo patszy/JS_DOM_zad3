@@ -1,10 +1,83 @@
 *{
     box-sizing: border-box;
+    margin: 2px;
 }
 
 body{
     margin: 0;
     padding: 0;
     background-color: #222222;
-    color: white;
+    color: #9f9f9f;
+}
+#pracownicy{
+    text-align: center;
+    font-size: 18px;
+    width: 45%;
+    margin: 0 auto;
+}
+
+h2{
+    margin: 20px;
+}
+
+span{
+    display: inline-block;
+}
+span[id^='tytul-']:first-child{
+    width: 150px;
+    text-align: justify;
+}
+span[id^='tytul-']{
+    width: 100px;
+    margin-bottom: 20px;
+}
+div[id^="pracownik"] > *{
+    display: inline-block;
+    width: 150px;
+}
+.pracownik{
+    text-align: justify;
+}
+span.wyplata{
+    width: 100px;
+}
+div[id^="pracownik"] input{
+    text-align: center;
+    width: 100px;
+    background-color: #222222;
+    border: 0;
+    color: #9f9f9f;
+    font-size: 16px;
+}
+
+/* Button */
+#oblicz{
+    padding: 5px;
+    margin: 20px;
+    width: 150px;
+    line-height: 20px;
+    background-color: #0066cc;
+    color: #9f9f9f;
+    border: 0;
+    font-size: 16px;
+    outline: 0;
+
+}
+
+/* Best employees */
+#pracownicy:last-child{
+    width: 60%;
+    background-color: grey;
+
+}
+#najlepsi-pracownicy li{
+    font-weight: normal;
+    margin-top: 10px;
+    width: 100%;
+    display: inline-block;
+}
+div h3{
+    background-color: #005500;
+    padding: 20px;
+    display: inline-block;
 }

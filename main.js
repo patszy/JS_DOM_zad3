@@ -44,7 +44,7 @@ function rateEmployee(){
     tabEmployee.sort((empl1, empl2) => (empl1.workTime > empl2.workTime) ? -1 : 1);
 
     for(i=0; i<3; i++){
-        getEmployee = document.querySelector('#pracownik'+tabEmployee[i].index+' span').innerHTML;
+        getEmployee = document.querySelector('#pracownik'+tabEmployee[i].index+' .pracownik').innerHTML;
         let divEmployee = document.createElement('li');
         divEmployee.innerText = getEmployee+" "+tabEmployee[i].workTime;
         getBestEmployee.appendChild(divEmployee);
